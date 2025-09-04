@@ -32,7 +32,7 @@ const config = {
     proxyPort: parseInt(process.env.PROXY_PORT) || 80,
     targetUrl: process.env.TARGET_URL || 'https://www.example.com',
     outputFile: process.env.OUTPUT_FILE || 'screenshot.png',
-    chromePort: parseInt(process.env.CHROME_PORT) || 48300,
+    chromePort: parseInt(process.env.CHROME_PORT) || 9223,
     timeout: 30000,
     useProxy: process.env.USE_DIRECT !== 'true'
 };
@@ -50,7 +50,7 @@ async function testDirectConnection() {
     
     try {
         const client = await CDP({
-            host: '172.31.22.94',
+            host: '172.31.21.39',
             port: config.chromePort,
             timeout: 5000
         });
